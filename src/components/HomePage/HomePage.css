@@ -1,0 +1,35 @@
+.client__name {
+    min-width: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 30%;
+    margin-right: 5px;
+}
+
+.mail__theme_content {
+    min-width: 0;
+    flex-grow: 4;
+    flex-shrink: 0;
+    flex-basis: 40%;
+    margin-right: 10px;
+}
+
+.mail__theme_content_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.mail__theme {
+    min-width: 0;
+    margin-right: 10px;
+}
+
+
+.label__bold {
+    font-weight: bold;
+}
+
+.link__layout {
+    padding-right: 20px;
+}

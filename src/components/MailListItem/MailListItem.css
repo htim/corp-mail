@@ -1,0 +1,19 @@
+.mail__block {
+    cursor: pointer;
+    margin-right: 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.ellipsis_box {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mail__content {
+    min-width: 0;
+    margin-right: 10px;
+    color: gray;
+}

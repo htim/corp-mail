@@ -1,0 +1,25 @@
+.search__block {
+    display: flex;
+    margin-top: 20px;
+}
+
+.search__input {
+    margin-right: 20px;
+}
+
+.extra_filters__block {
+    margin: 20px;
+}
+
+.calendars__element {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.select__client {
+    margin-top: 10px;
+}
+
+.select__category {
+    margin-top: 10px;
+}
