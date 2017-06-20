@@ -33,3 +33,7 @@
 .link__layout {
     padding-right: 20px;
 }
+
+.font-light {
+    font-weight: 100;
+}

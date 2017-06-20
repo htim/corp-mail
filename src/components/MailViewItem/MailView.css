@@ -1,0 +1,28 @@
+.mail_view__block {
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.empty__block_5 {
+    margin: 5px;
+}
+
+.empty__block_10{
+    margin: 10px;
+}
+
+.mail_number {
+    font-style: italic;
+    display: block;
+}
+
+.mail_content__block {
+    display: block;
+}
+
+.mail__content {
+    padding-left: 10px;
+}

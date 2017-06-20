@@ -14,6 +14,8 @@ import MailList from "../MailList/MailList";
 import SearchBlock from "../SearchBlock/SearchBlock";
 import FoldersTab from "../FoldersTab/FoldersTab";
 import MailView from "../MailView/MailView";
+import MainScreen from "../MainScreen/MainScreen";
+import { BrowserRouter, Route, Redirect } from "react-router-dom"
 
 export default class HomePage extends React.Component {
 
@@ -26,80 +28,16 @@ export default class HomePage extends React.Component {
         };
     }
 
-    generateMails = () => {
-        return [
-            {
-                id: 1,
-                clientName: "Дефект воспроизводится с длинным названием",
-                subject: "Уведомление о частичной блокировке клиента Уведомление о частичной блокировке клиента",
-                content: "Уважаемый клиент! \n Сообщаем вам, что в связи блаблабла Уважаемый клиент! \n Сообщаем вам, что в связи блаблаблаУважаемый клиент! \n Сообщаем вам, что в связи блаблаблаУважаемый клиент! \n Сообщаем вам, что в связи блаблабла",
-                isRead: false,
-                date: new Date(2017, 6, 12)
-            },
-            {
-                id: 2,
-                clientName: "Эльдорадо",
-                subject: "Уведомление о снятии частичной блокировки клиента",
-                content: "Lorem impsum. dsadasdasdads...",
-                isRead: false,
-                date: new Date(2017, 7, 12)
-            },
-            {
-                id: 3,
-                clientName: "BKM",
-                subject: "subject2",
-                content: "Lorem impsum. dsadasdasdads...",
-                isRead: true,
-                date: new Date(2017, 7, 14)
-            },
-            {
-                id: 4,
-                clientName: "BKM",
-                subject: "subject2",
-                content: "Lorem impsum. dsadasdasdads...",
-                isRead: true,
-                date: new Date(2017, 4, 12)
-            },
-            {
-                id: 5,
-                clientName: "BKM",
-                subject: "subject2",
-                content: "Lorem impsum. dsadasdasdads...",
-                isRead: true,
-                date: new Date(2017, 3, 12)
-            },
-            {
-                id: 6,
-                clientName: "BKM",
-                subject: "subject2",
-                content: "Lorem impsum. dsadasdasdads...",
-                isRead: true,
-                date: new Date(2017, 5, 12)
-            },
-            {
-                id: 7,
-                clientName: "BKM",
-                subject: "subject2",
-                content: "Lorem impsum. dsadasdasdads...",
-                isRead: true,
-                date: new Date(2017, 7, 12)
-            }
-        ]
-    };
-
     render() {
         return (
-            <Page header={ <AppHeader /> } footer={ <Footer fixed={true}/> }>
-                <AppTitle>
-                    <Heading>Корреспонденция</Heading>
-                </AppTitle>
-                <AppMenu>
-                    <FoldersTab checkedButtonId="inbox"/>
-                    <SearchBlock/>
-                </AppMenu>
-                <AppContent>
-                    <MailList mails={this.generateMails()}/>
-                </AppContent>
+            <Page header={<AppHeader />} footer={<Footer fixed={true} />}>
+                <BrowserRouter>
+                    <div>
+                        <Route exact path="/" render={() => (<Redirect to="/inbox" />)} />
+                        <Route exact path="/:folder" component={MainScreen} />
+                        <Route exact path="/message/:id" component={MailView} />
+                    </div>
+                </BrowserRouter>
             </Page>
         )
     }
